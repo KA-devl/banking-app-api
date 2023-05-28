@@ -5,10 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
 @Data
@@ -39,6 +36,9 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<Contact> contacts;
+
+    @OneToOne
+    private Account account;
 
 
 
