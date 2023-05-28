@@ -28,8 +28,8 @@ public class User {
 
     private boolean active;
 
-
-    //private Address address;
+    @OneToOne
+    private Address address;
 
     @OneToMany(mappedBy = "user")
     private List<Transaction> transactions;
@@ -39,6 +39,7 @@ public class User {
 
     @OneToOne
     private Account account;
+
 
 
 
