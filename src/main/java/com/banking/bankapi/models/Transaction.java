@@ -29,4 +29,8 @@ public class Transaction {
     private LocalDateTime creationDate;
 
     private LocalDateTime lastUpdated;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 }
