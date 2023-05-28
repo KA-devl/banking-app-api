@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name="_user") //Postgres already have user table, must change it to solve syntax error
 public class User {
     @Id
     @GeneratedValue
