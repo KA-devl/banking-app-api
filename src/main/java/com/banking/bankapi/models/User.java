@@ -4,20 +4,21 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name="_user") //Postgres already have user table, must change it to solve syntax error
-public class User {
-    @Id
-    @GeneratedValue
-    private Integer id;
+public class User extends AbsractEntity {
+//    @Id
+//    @GeneratedValue
+//    private Integer id;
 
     private String firstname;
 
