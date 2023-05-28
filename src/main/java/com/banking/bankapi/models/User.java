@@ -9,9 +9,9 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 public class User {
     @Id
@@ -42,9 +42,5 @@ public class User {
 
     @OneToOne
     private Role role;
-
-
-
-
 
 }
