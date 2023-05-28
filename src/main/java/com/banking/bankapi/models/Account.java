@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Account extends AbsractEntity {
+public class Account extends AbstractEntity {
 //    @Id
 //    @GeneratedValue
 //    private Integer id;

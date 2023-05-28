@@ -12,7 +12,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Role  extends AbsractEntity{
+public class Role  extends AbstractEntity{
 
 //    @Id
 //    @GeneratedValue

@@ -13,7 +13,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Contact extends AbsractEntity {
+public class Contact extends AbstractEntity {
 
 //    @Id
 //    @GeneratedValue

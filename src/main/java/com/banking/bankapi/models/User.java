@@ -15,7 +15,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 @Table(name="_user") //Postgres already have user table, must change it to solve syntax error
-public class User extends AbsractEntity {
+public class User extends AbstractEntity {
 //    @Id
 //    @GeneratedValue
 //    private Integer id;

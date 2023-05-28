@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Transaction extends AbsractEntity{
+public class Transaction extends AbstractEntity{
 //    @Id
 //    @GeneratedValue
 //    private Integer id;

@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Address extends AbsractEntity{
+public class Address extends AbstractEntity{
 
 //    @Id
 //    @GeneratedValue

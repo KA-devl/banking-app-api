@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @SuperBuilder
 @NoArgsConstructor
 @MappedSuperclass //Information is inherited by other classes, there is no table for this class, it is used to avoid code duplication
-public class AbsractEntity {
+public class AbstractEntity {
 
     @Id
     @GeneratedValue
