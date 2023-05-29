@@ -14,16 +14,19 @@ public class AccountDto {
 
     private String iban;
 
+    private UserDto user;
+
     public static AccountDto fromEntity(Account account) {
         return AccountDto.builder()
                 .iban(account.getIban())
+                .user(UserDto.fromEntity(account.getUser()))
                 .build();
 
     }
-
     public static Account toEntity(AccountDto accountDto) {
         return Account.builder()
                 .iban(accountDto.getIban())
+                .user(UserDto.toEntity(accountDto.getUser()))
                 .build();
     }
 }
