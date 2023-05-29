@@ -1,5 +1,6 @@
-package com.banking.bankapi;
+package com.banking.bankapi.validators;
 
+import com.banking.bankapi.exceptions.ObjectValidationException;
 import org.springframework.stereotype.Component;
 
 import javax.validation.ConstraintViolation;
@@ -21,8 +22,8 @@ public class ObjectsValidator<T> {
             Set<String> errorMessages = violations.stream()
                     .map(violation -> violation.getMessage())
                     .collect(Collectors.toSet());
-
             //raise exception
+            throw new ObjectValidationException(errorMessages, object.getClass().getName());
         }
     }
 }
