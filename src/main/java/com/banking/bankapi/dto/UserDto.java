@@ -16,23 +16,23 @@ public class UserDto {
 
     @NotNull
     @NotEmpty
-    @NotBlank
+    @NotBlank (message = "FIRSTNAME_IS_BLANK")
     private String firstname;
 
     @NotNull
     @NotEmpty
-    @NotBlank
+    @NotBlank (message = "LASTNAME_IS_BLANK")
     private String lastname;
 
     @NotNull
     @NotEmpty
-    @NotBlank
-    @Email
+    @NotBlank (message = "EMAIL_IS_BLANK")
+    @Email (message = "EMAIL_IS_NOT_VALID")
     private String email;
 
     @NotNull
     @NotEmpty
-    @NotBlank
+    @NotBlank (message = "PASSWORD_IS_BLANK")
     @Size(min = 8, max = 20)
     private String password;
 
