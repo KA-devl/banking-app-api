@@ -13,6 +13,8 @@ import lombok.Setter;
 @Builder
 public class ContactDto {
 
+    private Integer id;
+
     private String firstname;
 
     private String lastname;
@@ -25,6 +27,7 @@ public class ContactDto {
 
     public static ContactDto fromEntity(Contact contact) {
         return ContactDto.builder()
+                .id(contact.getId())
                 .firstname(contact.getFirstname())
                 .lastname(contact.getLastname())
                 .email(contact.getEmail())
@@ -35,6 +38,7 @@ public class ContactDto {
 
     public static Contact toEntity(ContactDto contactDto) {
         return Contact.builder()
+                .id(contactDto.getId())
                 .firstname(contactDto.getFirstname())
                 .lastname(contactDto.getLastname())
                 .email(contactDto.getEmail())
