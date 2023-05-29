@@ -1,4 +1,4 @@
-package com.banking.bankapi.models.repositories;
+package com.banking.bankapi.repositories;
 
 import com.banking.bankapi.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -22,17 +22,17 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     User findByFirstnameContainingIgnoreCaseAndEmail(String firstname, String email);
 
     //CUSTOM QUERIES WITH JPQL ========================================
-    @Query("from User u where u.firstname = :fn")
-    List<User> searchByFirstname(@Param(":fn") String firstname);
+    @Query("from User u where u.firstname = :firstname")
+    List<User> searchByFirstname(String firstname);
 
     @Query("from User u where u.firstname = '%:firstname%'")
     List<User> searchByFirstnameContaining(String firstname);
 
     @Query("from User u inner join Account a on u.id = a.user.id where a.iban = :iban")
-    List<User> searchByAccountIban(@Param(":iban") String iban);
+    List<User> searchByAccountIban(String iban);
 
     // CUSTOM QUERIES WITH NATIVE SQL ========================================
-    @Query(value = "select * from _user u inner join account a on u.id = a.user.id where a.iban = :iban", nativeQuery = true)
-    List<User> searchByAccountIbanNative(@Param(":iban") String iban);
+//    @Query(value = "select * from _user u inner join account a on u.id = a.user.id where a.iban = :iban", nativeQuery = true)
+//    List<User> searchByAccountIbanNative(@Param(":iban") String iban);
 
 }
