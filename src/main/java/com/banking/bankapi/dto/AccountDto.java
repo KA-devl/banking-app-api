@@ -12,13 +12,17 @@ import lombok.Setter;
 @Builder
 public class AccountDto {
 
+    private Integer id;
+
     private String iban;
 
-    private UserDto user;
+    //We use this to get the user details since we are using @OneToOne
+    private UserDto user; // We can also user id here
 
     public static AccountDto fromEntity(Account account) {
         return AccountDto.builder()
                 .iban(account.getIban())
+                .id(account.getId())
                 .user(UserDto.fromEntity(account.getUser()))
                 .build();
 
@@ -26,6 +30,7 @@ public class AccountDto {
     public static Account toEntity(AccountDto accountDto) {
         return Account.builder()
                 .iban(accountDto.getIban())
+                .id(accountDto.getId())
                 .user(UserDto.toEntity(accountDto.getUser()))
                 .build();
     }
