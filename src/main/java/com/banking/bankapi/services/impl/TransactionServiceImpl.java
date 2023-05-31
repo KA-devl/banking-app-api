@@ -58,4 +58,12 @@ public class TransactionServiceImpl implements TransactionService {
         //deposit is 1, withdraw is -1
         return TransactionType.TRANSFERT.equals(type) ? -1 : 1;
     }
+
+    @Override
+    public List<TransactionDto> findAllByUserId(Integer userId) {
+        return transactionRepository.findAllByUserId(userId)
+                .stream()
+                .map(transaction -> TransactionDto.fromEntity(transaction))
+                .collect(java.util.stream.Collectors.toList());
+    }
 }
