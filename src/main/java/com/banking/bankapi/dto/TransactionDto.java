@@ -8,6 +8,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
 @Getter
@@ -18,6 +19,7 @@ public class TransactionDto {
 
     private Integer id;
 
+    @Positive
     private BigDecimal amount;
 
     private TransactionType type;
