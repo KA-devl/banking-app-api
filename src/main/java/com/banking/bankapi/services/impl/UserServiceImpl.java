@@ -5,7 +5,6 @@ import com.banking.bankapi.repositories.UserRepository;
 import com.banking.bankapi.services.UserService;
 import com.banking.bankapi.validators.ObjectsValidator;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
