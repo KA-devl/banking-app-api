@@ -14,24 +14,24 @@ public class UserDto {
 
     private Integer id;
 
-    @NotNull
-    @NotEmpty
+    @NotNull (message = "FIRSTNAME_IS_NULL")
+    @NotEmpty (message = "FIRSTNAME_IS_EMPTY")
     @NotBlank (message = "FIRSTNAME_IS_BLANK")
     private String firstname;
 
-    @NotNull
-    @NotEmpty
+    @NotNull (message = "LASTNAME_IS_NULL")
+    @NotEmpty (message = "LASTNAME_IS_EMPTY")
     @NotBlank (message = "LASTNAME_IS_BLANK")
     private String lastname;
 
-    @NotNull
-    @NotEmpty
+    @NotNull (message = "EMAIL_IS_NULL")
+    @NotEmpty (message = "EMAIL_IS_EMPTY")
     @NotBlank (message = "EMAIL_IS_BLANK")
     @Email (message = "EMAIL_IS_NOT_VALID")
     private String email;
 
-    @NotNull
-    @NotEmpty
+    @NotNull (message = "PASSWORD_IS_NULL")
+    @NotEmpty (message = "PASSWORD_IS_EMPTY")
     @NotBlank (message = "PASSWORD_IS_BLANK")
     @Size(min = 8, max = 20)
     private String password;
