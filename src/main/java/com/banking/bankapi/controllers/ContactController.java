@@ -34,6 +34,7 @@ public class ContactController {
         return ResponseEntity.ok(service.findById(contactId));
     }
 
+    @GetMapping("/users/{user-id}")
     public ResponseEntity<List<ContactDto>> findAllByUserId(
             @PathVariable("user-id") Integer userId
     ) {
