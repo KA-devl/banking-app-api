@@ -34,6 +34,11 @@ public class ContactController {
         return ResponseEntity.ok(service.findById(contactId));
     }
 
+    public ResponseEntity<List<ContactDto>> findAllByUserId(
+            @PathVariable("user-id") Integer userId
+    ) {
+        return ResponseEntity.ok(service.findAllByUserId(userId));
+    }
     @DeleteMapping("/{contact-id}")
     public ResponseEntity<Void> delete(
             @PathVariable("contact-id") Integer contactId
