@@ -3,7 +3,6 @@ package com.banking.bankapi.services.impl;
 import com.banking.bankapi.dto.AccountDto;
 import com.banking.bankapi.dto.UserDto;
 import com.banking.bankapi.models.User;
-import com.banking.bankapi.repositories.AccountRepository;
 import com.banking.bankapi.repositories.UserRepository;
 import com.banking.bankapi.services.AccountService;
 import com.banking.bankapi.services.UserService;
