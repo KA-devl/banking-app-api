@@ -17,7 +17,7 @@ public class AccountController {
 
     @PostMapping("/")
     public ResponseEntity<Integer> save(
-            AccountDto accountDto
+            @RequestBody AccountDto accountDto
     ) {
         return ResponseEntity.ok(service.save(accountDto));
     }
