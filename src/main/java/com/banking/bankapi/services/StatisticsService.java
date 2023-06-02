@@ -9,7 +9,7 @@ public interface StatisticsService {
 
     BigDecimal getAccountBalance(Integer userId);
 
-    BigDecimal highestTransfert(Integer userId);
+    BigDecimal highestTransfer(Integer userId);
 
     BigDecimal highestDeposit(Integer userId);
 
