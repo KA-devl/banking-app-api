@@ -33,7 +33,7 @@ public class UserDto {
     @NotNull (message = "PASSWORD_IS_NULL")
     @NotEmpty (message = "PASSWORD_IS_EMPTY")
     @NotBlank (message = "PASSWORD_IS_BLANK")
-    @Size(min = 8, max = 20)
+    @Size(min = 8, max = 20, message = "PASSWORD_LENGTH_IS_NOT_VALID")
     private String password;
 
     public static UserDto fromEntity(User user){

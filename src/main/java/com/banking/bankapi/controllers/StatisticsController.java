@@ -16,7 +16,7 @@ public class StatisticsController {
 
     private final StatisticsService service;
 
-    @GetMapping ("/sum-by-date/${user-id")
+    @GetMapping ("/sum-by-date/{user-id}")
     public ResponseEntity<Map<LocalDate, BigDecimal>> findSumTransactionByDate(@RequestParam("start-date") LocalDate startDate,
                                                                                @RequestParam("end-date") LocalDate endDate,
                                                                                 @PathVariable("user-id") Integer userId) {
