@@ -68,7 +68,7 @@ public class AccountServiceImpl implements AccountService {
 
     private String generateRandomIban() {
         //generate iban (We use iban4j dependency)
-        String iban = Iban.random(CountryCode.CA).toFormattedString();
+        String iban = Iban.random(CountryCode.FR).toFormattedString();
         //check if iban already exists
         boolean ibanExists = accountRepository.findByIban(iban).isPresent();
 
