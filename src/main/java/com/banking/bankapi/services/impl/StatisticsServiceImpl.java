@@ -31,7 +31,7 @@ public class StatisticsServiceImpl implements StatisticsService {
 
     @Override
     public BigDecimal highestTransfer(Integer userId) {
-        return transactionRepository.findHighestAmountByTransactionType(userId, TransactionType.TRANSFERT);
+        return transactionRepository.findHighestAmountByTransactionType(userId, TransactionType.TRANSFER);
     }
 
     @Override

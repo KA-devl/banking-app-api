@@ -8,6 +8,9 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 
@@ -24,6 +27,9 @@ public class TransactionDto {
 
     private TransactionType type;
 
+    @NotNull
+    @NotBlank
+    @NotEmpty
     private String destinationIban;
 
     private Integer userId;

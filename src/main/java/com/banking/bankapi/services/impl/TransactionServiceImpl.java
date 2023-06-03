@@ -56,7 +56,7 @@ public class TransactionServiceImpl implements TransactionService {
 
     private int transactionType(TransactionType type) {
         //deposit is 1, withdraw is -1
-        return TransactionType.TRANSFERT.equals(type) ? -1 : 1;
+        return TransactionType.TRANSFER.equals(type) ? -1 : 1;
     }
 
     @Override
