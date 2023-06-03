@@ -8,6 +8,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -31,6 +32,9 @@ public class Transaction extends AbstractEntity{
 //    private LocalDateTime creationDate;
 //
 //    private LocalDateTime lastUpdated;
+
+    @Column(updatable = false)
+    private LocalDate transactionDate;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

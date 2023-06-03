@@ -18,10 +18,10 @@ public class SpringBootBankingAppApiApplication {
         SpringApplication.run(SpringBootBankingAppApiApplication.class, args);
     }
 
-    	@Bean     // CommandLineRunner is an interface used to indicate that a bean should run when it is contained within a SpringApplication. 
-        CommandLineRunner run(UserRepository userRepository) {
-            return args -> {
-			userRepository.save(UserDto.toEntity(UserDto.builder().email("johncena@gmail.com").firstname("John").lastname("Cena").password("123456").build()));
-		};
-	}
+//    	@Bean     // CommandLineRunner is an interface used to indicate that a bean should run when it is contained within a SpringApplication.
+//        CommandLineRunner run(UserRepository userRepository) {
+//            return args -> {
+//			userRepository.save(UserDto.toEntity(UserDto.builder().email("johncena@gmail.com").firstname("John").lastname("Cena").password("123456").build()));
+//		};
+//	}
 }

@@ -1,4 +1,5 @@
 package com.banking.bankapi.repositories;
+import com.banking.bankapi.dto.TransactionSumDetails;
 import com.banking.bankapi.models.Transaction;
 import com.banking.bankapi.models.TransactionType;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -20,6 +21,7 @@ public interface TransactionRepository extends JpaRepository<Transaction, Intege
     @Query("SELECT MAX(abs(t.amount) ) FROM Transaction t WHERE t.user.id = :userId AND t.type = :transactionType")
     BigDecimal findHighestAmountByTransactionType(Integer userId, TransactionType transactionType);
 
-    @Query("SELECT t.creationDate, SUM(t.amount) FROM Transaction t WHERE t.user.id = :userId AND t.creationDate BETWEEN :start AND :end GROUP BY t.creationDate")
-    Map<LocalDate, BigDecimal> findSumTransactionByDate(LocalDateTime start, LocalDateTime end, Integer userId);
+    //IMPORTANT : THE "AS" KEYWORD IS NECESSARY FOR THE QUERY TO WORK
+    @Query("SELECT t.transactionDate as transactionDate, SUM(t.amount) as amount FROM Transaction t WHERE t.user.id = :userId AND t.creationDate BETWEEN :start AND :end GROUP BY t.transactionDate")
+    List<TransactionSumDetails> findSumTransactionByDate(LocalDateTime start, LocalDateTime end, Integer userId);
 }
