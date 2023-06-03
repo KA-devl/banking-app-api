@@ -36,7 +36,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(OperationNonPermittedException.class)
     public ResponseEntity<ExceptionRepresentation> handleException(OperationNonPermittedException e) {
         ExceptionRepresentation representation = ExceptionRepresentation.builder()
-                .errorMessage(e.getMessage())
+                .errorMessage(e.getErrorMsg())
                 .errorSource(e.getMessage())
                 .build();
         return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(representation);

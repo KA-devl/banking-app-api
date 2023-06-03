@@ -12,6 +12,7 @@ import org.iban4j.Iban;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -24,13 +25,14 @@ public class AccountServiceImpl implements AccountService {
     private final ObjectsValidator<AccountDto> validator;
 
     @Override
+    @Transactional
     public Integer save(AccountDto dto) {
         //block iban update -> iban cannot be changed once created
         validator.validate(dto);
         Account account = AccountDto.toEntity(dto); //transform dto to entity
         //verify if user have already an account
         boolean userHasAlreadyAccount = accountRepository.findByUserId(account.getUser().getId()).isPresent();
-        if (userHasAlreadyAccount) {
+        if (userHasAlreadyAccount && account.getUser().isActive()) {
             throw new OperationNonPermittedException(
                     "User already has an account",
                     "save account",

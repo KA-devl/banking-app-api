@@ -46,7 +46,7 @@ public class UserController {
     public ResponseEntity<Integer> invalidateAccount(
             @PathVariable("user-id") Integer userId
     ) {
-        return ResponseEntity.ok(service.validateAccount(userId));
+        return ResponseEntity.ok(service.invalidateAccount(userId));
     }
 
     @DeleteMapping("/{user-id}")
