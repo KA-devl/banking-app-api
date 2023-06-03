@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.util.List;
@@ -24,6 +25,7 @@ public class User extends AbstractEntity {
 
     private String lastname;
 
+    @Column(unique = true)
     private String email;
 
     private String password;
